@@ -1,7 +1,12 @@
 # login-register
 Elegante formulario de registro con: ✨ Gradientes animados 🔒 Validación avanzada de contraseña ⚡ Efectos visuales interactivos 🌄 Diseño montañoso inmersivo 🛠 Vanilla JS + CSS3
 
-**Mountain View Registration App**  
+**Mountain View Registration App**
+
+
+   <div align="center" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; display: inline-block">
+     <img src="./assets/registration-form-screenshot.png" alt="Formulario-Registro-Login" width="700">
+   </div>
 
 Una elegante aplicación de registro con:  
 
