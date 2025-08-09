@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    overflow: hidden;
+    position: relative;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Mountain silhouettes */
+.mountains {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600'%3E%3Cpath d='M0,600 L0,400 L200,200 L400,350 L600,150 L800,300 L1000,100 L1200,250 L1200,600 Z' fill='%23000000' fill-opacity='0.3'/%3E%3Cpath d='M0,600 L0,450 L150,300 L350,400 L550,200 L750,350 L950,150 L1200,300 L1200,600 Z' fill='%23000000' fill-opacity='0.2'/%3E%3Cpath d='M0,600 L0,500 L100,400 L300,480 L500,350 L700,450 L900,300 L1200,400 L1200,600 Z' fill='%23000000' fill-opacity='0.15'/%3E%3C/svg%3E") no-repeat center bottom;
+    background-size: cover;
+    z-index: 1;
+}
+
+/* Trees silhouettes */
+.trees {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200'%3E%3Cg fill='%23000000' fill-opacity='0.4'%3E%3Cpolygon points='50,200 50,120 70,80 90,120 90,200'/%3E%3Cpolygon points='120,200 120,100 145,50 170,100 170,200'/%3E%3Cpolygon points='200,200 200,130 220,90 240,130 240,200'/%3E%3Cpolygon points='300,200 300,110 325,60 350,110 350,200'/%3E%3Cpolygon points='420,200 420,140 440,100 460,140 460,200'/%3E%3Cpolygon points='520,200 520,120 545,70 570,120 570,200'/%3E%3Cpolygon points='650,200 650,130 675,80 700,130 700,200'/%3E%3Cpolygon points='780,200 780,110 805,60 830,110 830,200'/%3E%3Cpolygon points='900,200 900,140 925,90 950,140 950,200'/%3E%3Cpolygon points='1050,200 1050,120 1075,70 1100,120 1100,200'/%3E%3C/g%3E%3C/svg%3E") no-repeat center bottom;
+    background-size: cover;
+    z-index: 2;
+}
+
+/* Navigation */
+nav {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: #f093fb;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #f093fb;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.login-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.login-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Registration Form */
+.form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 400px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.form-title {
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+    min-height: 70px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 20px 15px 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.input-group input:focus {
+    border-color: #f093fb;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(240, 147, 251, 0.3);
+}
+
+.input-icon {
+    position: absolute;
+    left: 18px;
+    top: 15px;
+    transform: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    color: white;
+    font-size: 14px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    accent-color: #f093fb;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.register-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.register-btn:active {
+    transform: translateY(0);
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #f093fb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Password Strength Indicator */
+.password-strength-container {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.password-strength {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+/* Password Errors Container */
+.password-errors {
+    width: 100%;
+    margin-top: 8px;
+    margin-top: 5px;
+    padding-left: 40px;
+}
+
+.password-error-item {
+    color: #f5576c;
+    font-size: 13px;
+    padding: 4px 0;
+    animation: fadeIn 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.password-error-item::before {
+    content: '•';
+    margin-right: 6px;
+    color: #f5576c;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Error States */
+.has-error input {
+    border-color: #f5576c !important;
+    background: rgba(245, 87, 108, 0.1) !important;
+    padding-bottom: 30px;
+}
+
+.has-error .input-icon {
+    color: #f5576c !important;
+    top: 15px;
+}
+
+/* Field-specific alerts */
+.custom-alert {
+    position: relative;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: white;
+    font-size: 13px;
+    margin-top: 5px;
+    animation: fadeIn 0.3s ease;
+}
+
+.name-alert, .email-alert, .password-alert, .terms-alert {
+    background: rgba(245, 87, 108, 0.2);
+    border-left: 3px solid #f5576c;
+    color: #f5576c;
+}
+
+.success-alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(79, 172, 254, 0.9);
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+/* Spinner animation */
+.spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .form-container {
+        width: 90%;
+        padding: 30px 20px;
+    }
+}
+
+/* Icons using CSS */
+.icon-user::before { content: "👤"; }
+.icon-email::before { content: "✉️"; }
+.icon-lock::before { content: "🔒"; }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - Mountain View</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="mountains"></div>
+    <div class="trees"></div>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+        <a href="index.html" class="login-btn">Register</a>
+    </nav>
+
+    <div class="form-container">
+        <h2 class="form-title">Login</h2>
+        <form id="registrationForm">
+            <div class="input-group">
+                <span class="input-icon icon-user"></span>
+                <input type="text" id="name" name="name" placeholder="Name or Email" required>
+            </div>
+            
+            <div class="input-group">
+                <span class="input-icon icon-lock"></span>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            
+            <button type="submit" class="register-btn">Login</button>
+        </form>
+        
+        <div class="login-link">
+            Need to register? <a href="index.html">Register</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
