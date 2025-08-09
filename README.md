@@ -59,9 +59,5 @@ Edita `style.css` para cambiar colores y efectos visuales. Modifica `script.js` 
 
 ---
 
-Esta descripción:  
-1. Destaca los puntos fuertes visuales y técnicos  
-2. Usa emojis para mejor legibilidad  
-3. Incluye secciones claras para instalar y personalizar  
-4. Es concisa pero completa  
+
 
